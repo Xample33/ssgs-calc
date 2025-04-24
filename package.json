@@ -1,0 +1,25 @@
+{
+  "name": "ssgs-calc",
+  "version": "1.0.0",
+  "description": "Progetto calcolatrice per SSGS",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Xample33/ssgs-calc.git"
+  },
+  "author": "Xample33",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Xample33/ssgs-calc/issues"
+  },
+  "homepage": "https://github.com/Xample33/ssgs-calc#readme",
+  "dependencies": {
+    "jest": "^29.7.0"
+  }
+}
