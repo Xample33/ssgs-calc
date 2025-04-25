@@ -28,39 +28,60 @@ function getRandomGreeting() {
   return greetings[i];
 }
 
-console.log("Benvenuto nel calcolatore CLI!");
-console.log("Operazioni disponibili:");
-Object.entries(operations).forEach(([key, op]) => {
-  console.log(`${key}. ${op.name}`);
-});
+function askQuestion(question) {
+  return new Promise(resolve => rl.question(question, resolve));
+}
 
-rl.question("Seleziona l'operazione (numero): ", (choice) => {
-  const operation = operations[choice];
-  if (!operation) {
-    console.log("Scelta non valida. Uscita...");
-    rl.close();
-    return;
+async function mainLoop() {
+  console.log("Benvenuto nel calcolatore CLI!");
+
+  let continueLoop = true;
+  while (continueLoop) {
+    console.log("\nOperazioni disponibili:");
+    Object.entries(operations).forEach(([key, op]) => {
+      console.log(`${key}. ${op.name}`);
+    });
+
+    const choice = await askQuestion("Seleziona l'operazione (numero, oppure 'q' per uscire): ");
+
+    if (choice.toLowerCase() === 'q') {
+      continueLoop = false;
+      break;
+    }
+
+    const operation = operations[choice];
+    if (!operation) {
+      console.log("Scelta non valida. Riprova.");
+      continue;
+    }
+
+    let num1, num2;
+    try {
+      num1 = parseFloat(await askQuestion("Inserisci il primo numero: "));
+      if (isNaN(num1)) throw new Error("Il primo parametro non è un numero valido.");
+
+      num2 = parseFloat(await askQuestion("Inserisci il secondo numero: "));
+      if (isNaN(num2)) throw new Error("Il secondo parametro non è un numero valido.");
+    } catch (err) {
+      console.error("Errore:", err.message);
+      continue;
+    }
+
+    try {
+      const result = operation.func(num1, num2);
+      console.log(`Risultato: ${result}`);
+    } catch (err) {
+      console.error("Errore durante il calcolo:", err.message);
+    }
+
+    const another = await askQuestion("\nVuoi eseguire un'altra operazione? (s/n): ");
+    if (another.toLowerCase() !== 's') {
+      continueLoop = false;
+    }
   }
 
-  rl.question("Inserisci il primo numero: ", (a) => {
-    rl.question("Inserisci il secondo numero: ", (b) => {
-      const num1 = Number(a);
-      const num2 = Number(b);
-      if (isNaN(num1) || isNaN(num2)) {
-        console.log("Errore: uno o entrambi i parametri non sono numeri.");
-        rl.close();
-        return;
-      }
+  console.log("\n" + getRandomGreeting());
+  rl.close();
+}
 
-      try {
-        const result = operation.func(num1, num2);
-        console.log(`Risultato: ${result}`);
-      } catch (err) {
-        console.error("Errore:", err.message);
-      }
-
-      console.log(getRandomGreeting());
-      rl.close();
-    });
-  });
-});
+mainLoop();

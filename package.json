@@ -7,7 +7,9 @@
     "test": "test"
   },
   "scripts": {
-    "test": "jest"
+    "test": "jest --coverage",
+    "test:success": "jest calculator.success.test.js",
+    "test:fail": "jest calculator.fail.test.js"
   },
   "repository": {
     "type": "git",
