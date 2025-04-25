@@ -3,6 +3,13 @@
 
 Questo progetto consiste nello sviluppo di una **calcolatrice da linea di comando (CLI)** usando **Node.js**.  
 Include un sistema di **test automatizzati con Jest** e una **pipeline CI** configurata con **GitHub Actions** che verifica ogni modifica al codice, includendo la **code coverage**.
+Sono state inoltre implementate tutte le **funzionalità facoltative** previste, tra cui:
+
+- Estensione delle operazioni disponibili includendo la potenza.
+- Gestione avanzata degli errori: in caso di input non valido, l’utente riceve un messaggio chiaro e può riprovare senza che il programma termini.
+- Esecuzione continua: l’utente può effettuare più operazioni nella stessa sessione, senza dover riavviare il programma.
+- Chiusura personalizzata: al termine dell’esecuzione viene mostrato un saluto casuale per rendere l'esperienza più simpatica e coinvolgente.
+
 
 ---
 
