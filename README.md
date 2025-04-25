@@ -9,36 +9,36 @@ Include un sistema di **test automatizzati con Jest** e una **pipeline CI** conf
 ## ▶️ Istruzioni d'Uso
 
 1. Clonare il repository  
-   ```bash
+   ```
    git clone https://github.com/Xample33/ssgs-calc.git
    ```
 
 2. Entrare nella cartella del progetto  
-   ```bash
+   ```
    cd ssgs-calc
    ```
 
 3. Installare le dipendenze  
-   ```bash
+   ```
    npm install
    ```
 
 4. Eseguire la calcolatrice da terminale  
-   ```bash
+   ```
    node index.js
    ```
 
 5. Eseguire i test  
    - Tutti i test:  
-     ```bash
+     ```
      npm run test
      ```
    - Solo i test che devono passare:  
-     ```bash
+     ```
      npm run test:success
      ```
    - Solo i test che devono fallire:  
-     ```bash
+     ```
      npm run test:fail
      ```
 
