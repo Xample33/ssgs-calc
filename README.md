@@ -56,7 +56,7 @@ Sono state inoltre implementate tutte le **funzionalità facoltative** previste,
 I test sono scritti con **Jest** e suddivisi in due file:
 
 - ✅ `calculator.success.test.js` – Test validi che **devono passare**
-- ❌ `calculator.fail.test.js` – Test su casi limite o errori che **devono fallire**
+- ❌ `calculator.fail.test.js` – Test su casi limite o errori che **devono fallire** (alcuni sono skippati per far comunque passare il test generale)
 
 La **code coverage** è attiva tramite Jest (`--coverage`) ed è visibile attraverso https://xample33.github.io/ssgs-calc/
 
