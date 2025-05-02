@@ -27,12 +27,12 @@ Sono state inoltre implementate tutte le **funzionalità facoltative** previste,
 
 3. Installare le dipendenze  
    ```
-   npm install
+   npm ci
    ```
 
 4. Eseguire la calcolatrice da terminale  
    ```
-   node index.js
+   npm start
    ```
 
 5. Eseguire i test  
