@@ -7,9 +7,13 @@
     "test": "test"
   },
   "scripts": {
+    "start": "node index.js",
     "test": "jest --coverage",
     "test:success": "jest calculator.success.test.js",
     "test:fail": "jest calculator.fail.test.js"
+  },
+  "engines": {
+    "node": ">=22.0.0"
   },
   "repository": {
     "type": "git",
@@ -21,7 +25,7 @@
     "url": "https://github.com/Xample33/ssgs-calc/issues"
   },
   "homepage": "https://github.com/Xample33/ssgs-calc#readme",
-  "dependencies": {
+  "devDependencies": {
     "jest": "^29.7.0"
   }
 }
