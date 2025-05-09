@@ -2,6 +2,16 @@
   "name": "ssgs-calc",
   "version": "1.0.0",
   "description": "Progetto calcolatrice per SSGS",
+  "keywords": [
+    "calculator",
+    "CLI calculator",
+    "CLI tool",
+    "Node.js",
+    "Jest testing",
+    "unit testing",
+    "math operations",
+    "ssgs project"
+  ],
   "main": "index.js",
   "directories": {
     "test": "test"
@@ -9,8 +19,8 @@
   "scripts": {
     "start": "node index.js",
     "test": "jest --coverage",
-    "test:success": "jest calculator.success.test.js",
-    "test:fail": "jest calculator.fail.test.js"
+    "test:standard": "jest calculator.standard.test.js",
+    "test:exceptions": "jest calculator.exceptions.test.js"
   },
   "engines": {
     "node": ">=22.0.0"
