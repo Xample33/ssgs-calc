@@ -40,13 +40,13 @@ Sono state inoltre implementate tutte le **funzionalità facoltative** previste,
      ```
      npm run test
      ```
-   - Solo i test che devono passare:  
+   - Solo i test standard che verificano le operazioni
      ```
-     npm run test:success
+     npm run test:standard
      ```
-   - Solo i test che devono fallire:  
+   - Solo i test che verificano il sollevamento delle eccezioni
      ```
-     npm run test:fail
+     npm run test:exceptions
      ```
 
 ---
@@ -55,8 +55,8 @@ Sono state inoltre implementate tutte le **funzionalità facoltative** previste,
 
 I test sono scritti con **Jest** e suddivisi in due file:
 
-- ✅ `calculator.success.test.js` – Test validi che **devono passare**
-- ❌ `calculator.fail.test.js` – Test su casi limite o errori che **devono fallire** (alcuni sono skippati per far comunque passare il test generale)
+- `calculator.standard.test.js` – Test standard che verificano il **corretto** funzionamento della logica degli operatori
+- `calculator.exceptions.test.js` – Test che verificano il sollevamento di specifiche **eccezioni** in alcuni casi particolari (es. divisione per 0)
 
 La **code coverage** è attiva tramite Jest (`--coverage`) ed è visibile attraverso https://xample33.github.io/ssgs-calc/
 
@@ -101,8 +101,8 @@ ssgs-calc/
 │   └── calculator.js               # Modulo con le funzioni matematiche
 │
 ├── test/
-│   ├── calculator.fail.test.js     # Test che devono fallire (es. input non validi)
-│   └── calculator.success.test.js  # Test che devono passare (es. risultati corretti)
+│   ├── calculator.standard.test.js     # Test standard che verificano le operazioni
+│   └── calculator.exceptions.test.js   # Test che verificano il sollevamento delle eccezioni
 │
 ├── .gitignore                      # File per escludere directory/file dal versionamento
 ├── index.js                        # Entry point CLI della calcolatrice
