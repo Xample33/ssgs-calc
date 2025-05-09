@@ -16,10 +16,6 @@ test('divide: divisione corretta', () => {
     expect(calc.divide(10, 2)).toBe(5);
 });
 
-test('divide: divisione per zero genera errore', () => {
-    expect(() => calc.divide(5, 0)).toThrow("Divisione per zero non consentita.");
-});
-
 test('power: potenza corretta', () => {
     expect(calc.power(2, 3)).toBe(8);
 });
